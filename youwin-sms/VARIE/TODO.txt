@@ -1,0 +1,78 @@
+1) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SMS gateway:
+
+* implementare algoritmo di gioco:
+
+  
+  - in base al codice risali al concorso
+  
+  - in base al timestamp dell'SMS risali alla giornata
+    
+  - controlla se il codice è realmente giocabile, cioè 
+     a) il codice non è già stato già invalidato 
+     b) il concorso a cui fa riferimento il codice è in corso di validità
+     c) l'orario dell'SMS è all'interno dell'intervallo di validità della giornata
+     
+     se non è giocabile vai direttamente al punto "FINE" (nessun SMS di risposta) 
+  
+  - invalida il codice e incrementa il numero di utilizzi
+  
+  - effettua il test di vincita con probabilità pari a quella indicata dal concorso
+  
+  - se non ha vinto
+      - SMS "riprova sarai più fortunato"
+  - se ha vinto
+      - calcolo delle quantità disponibili di ogni premio all'istante attuale. 
+        Per ogni premio tale quantità è data esattamente da 
+           a) sommatoria dall'inizio del concorso fino al giorno corrente (estremi inclusi) della quantità vinta
+           b) sommatoria dall'inizio del concorso fino al giorno corrente (estremi inclusi) della quantità massimale 
+           QNT=a) - b) 
+        Tale quantità rappresenta, data una certa tipologia di premio, il numero di pezzi
+        che posso ancora distribuire.   
+           
+      - algoritmo di selezione del premio
+      - controllo massimali 
+      - se il massimali sono rispettati
+          - SMS "hai vinto il premio X"
+          - aggiornamento quantità premio vinta
+      - se i massimali non sono rispettati
+          - SMS "riprova sarai più fortunato"
+               
+  - FINE: aggiornamento della tabella "giocate"
+      - timestamp
+      - numero di telefono
+      - vinto / perso ed eventuali dati di vincita
+
+
+
+Interfaccia di controllo PV:
+
+* implementare infrastruttura XML-RPC / Java / Stampante
+
+* algoritmo "generazione" codici:
+    - prendi il prossimo codice ad uso singolo, non invalidato
+      SELECT * FROM codici WHERE uso_multiplo=0 AND invalidato=0
+
+* algoritmo presidio PV
+    - dato l'importo complessivo inserito dall'operatore ricava il numero di codici da stampare
+    - registra l'importo inserito con un timestamp e codice PV
+    - generazione di un numero opportuno di codici con il suddetto algoritmo
+    - stampa uno scontrino con le istruzioni 

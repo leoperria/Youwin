@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+ <title><?=$this->app_config["PRODUCT_NAME"]?> <?=$this->app_config["PRODUCT_VERSION"]?> - <?=$this->app_config["PRODUCTION"] ? "" : "DEBUG"?></title>
+ <link rel="stylesheet" type="text/css" href="<?=$this->app_config["BASE_URL"]?>/css/main.css" />
+</head>
+<body>
+<div id="login_box">
+  <form action="<?=$this->url(array('controller'=>'index','action'=>'login')); ?>" method="post">
+    <table>
+      <tr>
+        <td class="label"> User: </td>
+        <td class="field"><input id="username" name="username" type="text"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label"> password: </td>
+        <td class="field"><input id="password" name="password" type="password"/>
+        </td>
+      </tr>
+      <tr>
+        <td class="label"></td>
+        <td class="submit"><input name="login" type="submit" value="Login" />
+        </td>
+      </tr>
+      <tr><td colspan="2"><div id="error_box" <?=($this->result!='')? "class=\"border_dotted\"" : "";?>> <?=$this->result;?></div></td></tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

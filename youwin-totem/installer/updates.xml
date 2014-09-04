@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="43" updatableVersionMin="" updatableVersionMax="" fileName="YouwinTotem_windows_1_0_20101019.exe" newVersion="1.0_20101019" newMediaFileId="43" fileSize="20942848" bundledJre="windows-x86-1.6.0_21" archive="false">
+    <comment />
+  </entry>
+</updateDescriptor>
+

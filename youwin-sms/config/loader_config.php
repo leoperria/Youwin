@@ -1,0 +1,41 @@
+<?php
+ 
+  $LOADER_CONFIG=array(
+    "JAVASCRIPT_FILES"=>array(
+       "js/identity.js",
+       "js/utils.js",
+       "js/lib/OOSubmit.js",
+       "js/lib/Ext.ux.grid.CellActions.js",
+       "js/lib/Ext.ux.grid.RowActions.js",
+       "js/lib/Ext.ux.grid.Search.js",
+       "js/lib/Ext.ux.RowFitLayout.js",
+       "js/lib/Ext.ux.grid.GridSummary.js",
+       "js/lib/Ext.ux.UploadDialog.js",
+       "js/lib/Ext.ux.UploadFile.js",
+       "js/lib/MessageWindow.js",
+       "js/lib/PagingStore.js",
+       "js/lib/GroupSummary.js",
+       "js/generic_grid.js",
+       "js/generic_form.js",
+       "js/main.js",
+       "js/users/users_main.js",
+       "js/users/edit_password.js",
+       "js/users/edit_user.js",
+       "js/pubblicazioni/pubblicazioni_main.js",
+       "js/pubblicazioni/edit_pubblicazione.js",
+       "js/pubblicazioni/upload_pubblicazione.js",
+       "js/pubblicazioni/search.js",
+       "js/organizations/organizations_main.js",
+       "js/organizations/organizations_edit.js",
+       "js/categorie/categorie_main.js",
+       "js/categorie/edit_categoria.js",
+       "js/mittenti/mittenti_main.js",
+       "js/mittenti/edit_mittente.js"
+    ),
+    "CSS_FILES"=>array(
+       "{extjs_baseurl}/resources/css/ext-all.css",
+       "{extjs_baseurl}/resources/css/xtheme-gray.css",
+       "{baseurl}/css/main.css"
+    )
+  );
+  
